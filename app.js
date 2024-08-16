@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+require("dotenv").config();
+const PORT = process.env.PORT || 4000;
 //  for setup socket.io , we need to get http module from http which is pre installed in node modules
 const { createServer } = require("node:http"); // get create server from node:http
 const path = require("node:path");
@@ -19,7 +21,7 @@ io.on("connection", function (socket) {
     //  send id of those , who disconnected
     io.emit("user-disconnect", socket.id);
   });
-//   console.log("connected to socket");
+  //   console.log("connected to socket");
 });
 
 //  set view-engine with ejs
@@ -30,4 +32,4 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
-server.listen(8000, () => console.log("app is listening at 8000"));
+server.listen(PORT, () => console.log(`app is listening at ${PORT}`));
