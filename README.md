@@ -45,7 +45,7 @@ A real-time location tracking application that visualizes user locations on a ma
 
 ## Deployment
 
-Deployed the app on render: 
+Deployed the app on render:  https://realtime-location-tracker-obba.onrender.com
 
 ## Contributing
 
